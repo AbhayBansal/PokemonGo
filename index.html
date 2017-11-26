@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html ng-app>
-<head>
-	<title>home</title>
-	<script type="text/javascript" src="angular.js"></script>
-</head>
-<body ng-init="hour = 10">
-<div ng-controller="Main">
-	<h1>
-	hello Angular!
-</h1>
-<p>hour of day is: <span ng-bind="hour"></span></p>
-<p ng-if=1>Good Morning one and all</p>
-<span>{{hour}}</span>
-</div>
-<script type="text/javascript">
-	function Main() {
-		console.log("main func called");
-	}
-</script>
-</body>
+<html ng-app="pokedexApp">
+    <head>
+        <!-- SCROLLS -->
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+        <!-- SPELLS -->
+        <!-- load angular via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div ng-controller="pokeController">
+            <form>
+            <input ng-model="pokeNum" placeholder="Enter the Pokemon number" style="width:200px">
+            <button ng-click="getPokemon()">Get Pokemon!</button>
+            </form>
+            <div>{{ pokemon.name }}</div>
+            <img ng-src="{{ pokemon.sprite }}" />
+        
+        </div>
+    </body>
 </html>
