@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>home</title>
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<body ng-init="hour = 10">
+<div ng-controller="Main">
+	<h1>
+	hello Angular!
+</h1>
+<p>hour of day is: <span ng-bind="hour"></span></p>
+<p ng-if=1>Good Morning one and all</p>
+<span>{{hour}}</span>
+</div>
+<script type="text/javascript">
+	function Main() {
+		console.log("main func called");
+	}
+</script>
+</body>
+</html>
